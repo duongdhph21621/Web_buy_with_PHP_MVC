@@ -16,6 +16,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script
         type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <!-- /fonts -->
@@ -32,23 +34,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h2 class="agileits1">Xshop</h2>
         </div>
         <div class="content-agile2">
-            <form action="#" method="post">
-                <div class="form-control w3layouts">
-                    <input type="text" id="firstname" class="" name="firstname" placeholder="First Name"
-                        title="Please enter your Username" required="">
-                </div>
-
-
-
-                <div class="form-control agileinfo">
-                    <input type="password" class="lock" name="password" placeholder="Password" id="password1"
-                        required="">
-                </div>
-
-
-
-                <input type="submit" class="register" value="Login">
-            </form>
+            <?php
+            include $VIEW_NAME;
+            ?>
 
 
         </div>

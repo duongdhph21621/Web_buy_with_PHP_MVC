@@ -1,8 +1,16 @@
 <?php
 require("../../dao/binh_luan.php");
 require("../../dao/users.php");
-if (exist_param("noidung")) {
-    $ma_kh = $_SESSION["user"]["ma_kh"];
+
+$userCookie = $_COOKIE['user'];
+
+// Chuyển đổi chuỗi đã serialize thành mảng
+$userLogin = unserialize($userCookie);
+
+if (exist_param("comment")) {
+    $noi_dung = $_POST["comment"];
+    $ma_kh = $userLogin["ma_kh"];
+    echo $ma_kh;
     $ngay_bl = date_format(date_create(), "Y-m-d");
     binh_luan_insert($noi_dung, $ma_hh, $ngay_bl, $ma_kh);
 }
@@ -11,6 +19,9 @@ $bl_list = binh_luan_select_by_hang_hoa($ma_hh);
 foreach ($bl_list as $value) {
     echo "<div class='bg-gray-100 flex items-center py-2 px-6 border-b-2'>";
     echo "<div class='flex items-center '>";
+    echo "<div class='w-[40px] h-[40px] rounded-full mr-4 flex items-center justify-center'>";
+    echo "<img src='../../upload/" . users_select_by_id($value["ma_kh"])["hinh"] . "'  class='w-[40px] h-[40px] rounded-full object-cover'/>";
+    echo "</div>";
     echo "<div class='text-gray-800'>";
     echo "<h3 class='font-semibold'>" . users_select_by_id($value["ma_kh"])["ho_ten"] . "</h3>";
     echo "<p class='text-sm text-gray-600'>" . $value["ngay_bl"] . "</p>";
@@ -21,11 +32,11 @@ foreach ($bl_list as $value) {
     echo "</div>";
 }
 
-if (!isset($_SESSION["user"])) {
+if (!$userLogin) {
     echo "<p class='text-sm text-gray-600'>Đăng nhập để bình luận</p>";
 } else {
     ?>
-    <form action="<?php $_SERVER["REQUEST_URL"] ?>" method="POST">
+    <form action="" method="POST">
         <div>
             <div class="flex items-center" aria-orientation="horizontal" role="tablist">
                 <!-- Selected: "bg-gray-100 text-gray-900 hover:bg-gray-200", Not Selected: "bg-white text-gray-500 hover:bg-gray-100 hover:text-gray-900" -->

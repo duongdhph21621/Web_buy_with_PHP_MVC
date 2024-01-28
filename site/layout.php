@@ -13,7 +13,14 @@
 </head>
 
 <body>
+    <?php
+    $userCookie = $_COOKIE['user'];
 
+    $userLogin = unserialize($userCookie);
+    if (!$userLogin) {
+        header("Location: /site/tai_khoan?login");
+    }
+    ?>
     <?php
     require("header.php");
     ?>

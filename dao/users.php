@@ -37,4 +37,12 @@ function users_select_by_id($edit_id)
     return qdo_query_one($sql);
 }
 
+function check_user_login_user_name($user_name)
+{
+    $sql = "SELECT * FROM users WHERE user_name = ?";
+    return qdo_query_one($sql, $user_name);
+
+
+}
+
 ?>

@@ -9,6 +9,18 @@
 </head>
 
 <body>
+    <?php
+    $userCookie = $_COOKIE['user'];
+
+    $userLogin = unserialize($userCookie);
+    if (!$userLogin) {
+        header("Location: /site/tai_khoan?login");
+    }
+    if ($userLogin["vai_tro"] != 1) {
+        header("Location: /site/trang_chu");
+
+    }
+    ?>
 
 
     <div>
@@ -62,11 +74,11 @@
                                 aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full bg-gray-50"
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                    alt="">
+                                    src="/upload/<?php echo $userLogin["hinh"] ?>" alt="">
                                 <span class="hidden lg:flex lg:items-center">
-                                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900"
-                                        aria-hidden="true">Tom Cook</span>
+                                    <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">
+                                        <?php echo $userLogin["ho_ten"] ?>
+                                    </span>
                                     <svg class="ml-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"
                                         aria-hidden="true">
                                         <path fill-rule="evenodd"
@@ -92,8 +104,8 @@
                                 <!-- Active: "bg-gray-50", Not Active: "" -->
                                 <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem"
                                     tabindex="-1" id="user-menu-item-0">Your profile</a>
-                                <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-1">Sign out</a>
+                                <a href="/site/tai_khoan?logout" class="block px-3 py-1 text-sm leading-6 text-gray-900"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Sign out</a>
                             </div>
                         </div>
                     </div>
