@@ -12,7 +12,7 @@ $userCookie = $_COOKIE['user'];
 
 // Chuyển đổi chuỗi đã serialize thành mảng
 $userLogin = unserialize($userCookie);
-if (!$userLogin) {
+if (!$userLogin ) {
     header("Location: /site/tai_khoan?login");
 }
 

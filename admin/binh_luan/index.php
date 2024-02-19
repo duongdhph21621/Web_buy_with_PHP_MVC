@@ -11,6 +11,20 @@ if (exist_param("detail")) {
 
     $VIEW_NAME = "binh_luan/chi_tiet_bl.php";
 } elseif (exist_param("xoa_bl")) {
+    $ma_bl = $_GET["ma_bl"];
+    binh_luan_delete($ma_bl);
+    $ma_hh = $_GET["ma_hh"];
+    $ds_bl = binh_luan_select_by_hh($ma_hh);
+    $VIEW_NAME = "binh_luan/chi_tiet_bl.php";
+
+
+} elseif (exist_param("deleteSelected")) {
+    $ma_bl = $_POST["ma_bl"];
+    binh_luan_delete($ma_bl);
+    $ma_hh = $_POST["ma_hh"];
+    $ds_bl = binh_luan_select_by_hh($ma_hh);
+    $VIEW_NAME = "binh_luan/chi_tiet_bl.php";
+
 
 } else {
     $thong_ke_bl = thong_ke_binh_luan();

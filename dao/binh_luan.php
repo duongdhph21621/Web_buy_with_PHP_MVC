@@ -19,12 +19,16 @@ function binh_luan_insert($noi_dung, $ma_hh, $ngay_bl, $ma_kh)
 function binh_luan_delete($ma_bl)
 {
 
-    $sql = "DELETE FROM binh_luan WHERE ma_bl = $ma_bl";
     if (is_array($ma_bl)) {
-        foreach ($ma_bl as $bl) {
-            pdo_execute($bl);
-        }
+        $idList = implode(',', $ma_bl);
+        $sql = "DELETE FROM binh_luan WHERE ma_bl IN ($idList)";
+        // foreach ($ma_bl as $bl) {
+        //     $sql = "DELETE FROM binh_luan WHERE ma_bl = $bl";
+        pdo_execute($sql);
+        // }
     } else {
+        $sql = "DELETE FROM binh_luan WHERE ma_bl = $ma_bl";
+
         pdo_execute($sql);
 
     }

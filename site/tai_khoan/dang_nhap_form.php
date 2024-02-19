@@ -11,8 +11,8 @@
     </div>
 
     <div class="flex items-center justify-between">
-        <a href="" class="ml-[100px] text-blue-500">Quên mật khẩu</a>
-        <a href="" class="mr-[100px] text-blue-500">Đăng ký</a>
+        <a href="index.php?forgotPass" class="ml-[100px] text-blue-500">Quên mật khẩu</a>
+        <a href="index.php?signup" class="mr-[100px] text-blue-500">Đăng ký</a>
     </div>
 
 

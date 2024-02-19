@@ -12,7 +12,7 @@ function users_select_all()
 function users_insert($user_name, $mat_khau, $ho_ten, $email, $vai_tro, $kich_hoat, $hinh)
 {
     $sql = "INSERT INTO users(user_name,mat_khau,ho_ten,email,vai_tro,kich_hoat,hinh) VALUES (?,?,?,?,?,?,?)";
-    pdo_execute($sql, $user_name, $mat_khau, $ho_ten, $email, $vai_tro == 1, $kich_hoat == 1, $hinh);
+    pdo_execute($sql, $user_name, $mat_khau, $ho_ten, $email, intval($vai_tro), intval($kich_hoat), $hinh);
 
 }
 
@@ -45,4 +45,15 @@ function check_user_login_user_name($user_name)
 
 }
 
+function check_user_change_pass($user_name, $email)
+{
+    $sql = "SELECT * FROM users WHERE user_name = ? AND email = ?";
+    return qdo_query_one($sql, $user_name, $email);
+}
+
+function update_password($user_name, $email, $password)
+{
+    $sql = "UPDATE users SET mat_khau = ? WHERE user_name =? AND email =?";
+    return pdo_execute($sql, $password, $user_name, $email);
+}
 ?>
