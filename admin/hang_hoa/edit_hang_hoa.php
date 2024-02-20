@@ -111,6 +111,8 @@
                 <label class="block text-sm font-medium text-gray-700">Hình:</label>
 
                 <input id="hinh" name="hinh" type="file" class="" value="<?php echo $data_edit["hinh"] ?>">
+                <input id="hinh_no_load" name="hinh_no_load" type="text" hidden class=""
+                    value="<?php echo $data_edit["hinh"] ?>">
                 <img src="/upload/<?php echo $data_edit["hinh"] ?>" alt="" class="w-[40px] h-[40px] mt-4">
             </div>
 

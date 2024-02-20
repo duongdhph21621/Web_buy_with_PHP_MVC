@@ -10,7 +10,6 @@ $userLogin = unserialize($userCookie);
 if (exist_param("comment")) {
     $noi_dung = $_POST["comment"];
     $ma_kh = $userLogin["ma_kh"];
-    echo $ma_kh;
     $ngay_bl = date_format(date_create(), "Y-m-d");
     binh_luan_insert($noi_dung, $ma_hh, $ngay_bl, $ma_kh);
 }

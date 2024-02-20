@@ -16,17 +16,19 @@ function users_insert($user_name, $mat_khau, $ho_ten, $email, $vai_tro, $kich_ho
 
 }
 
-function users_insert_edit_login($user_name, $ho_ten, $email, $hinh)
+function users_edit_login($user_name, $ho_ten, $email, $hinh, $ma_kh)
 {
-    $sql = "INSERT INTO users(user_name,ho_ten,email,hinh) VALUES (?,?,?,?)";
-    pdo_execute($sql, $user_name, $ho_ten, $email, $hinh);
+    $sql = "UPDATE users SET user_name = ?, ho_ten = ?, email = ?, hinh = ? WHERE ma_kh = ?";
+
+    pdo_execute($sql, $user_name, $ho_ten, $email, $hinh, $ma_kh);
 
 }
 
-function users_insert_edit_login_not_img($user_name, $ho_ten, $email)
+function users_edit_login_not_img($user_name, $ho_ten, $email, $ma_kh)
 {
-    $sql = "INSERT INTO users(user_name,ho_ten,email) VALUES (?,?,?)";
-    pdo_execute($sql, $user_name, $ho_ten, $email);
+    $sql = "UPDATE users SET user_name = ?, ho_ten = ?, email = ? WHERE ma_kh = ?";
+
+    pdo_execute($sql, $user_name, $ho_ten, $email, $ma_kh);
 
 }
 

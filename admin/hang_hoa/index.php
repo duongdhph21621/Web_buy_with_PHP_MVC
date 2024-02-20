@@ -58,6 +58,10 @@ if (exist_param("add_loai_hang")) {
 
     $hinh = save_file("hinh", $UPLOAD_URL);
 
+    if (!$hinh) {
+        $hinh = $_POST["hinh_no_load"];
+    }
+
     hang_hoa_update($ten_hh, $don_gia, $giam_gia, $hinh, $ngay_nhap, $mo_ta, $dac_biet, $luot_xem, $ma_loai, $ma_hh);
     $ds_hang_hoa = hang_hoa_select_all();
 

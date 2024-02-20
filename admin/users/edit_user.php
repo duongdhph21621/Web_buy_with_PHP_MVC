@@ -93,6 +93,8 @@
                 <label class="block text-sm font-medium text-gray-700">Chọn tệp:</label>
 
                 <input id="image" name="image" type="file" class="" value="<?php echo $data_edit["hinh"] ?>">
+                <input type="text" name="hinh_no_load" id="hinh_no_load" value="<?php echo $data_edit["hinh"] ?>"
+                    hidden>
                 <img src="/upload/<?php echo $data_edit["hinh"] ?>" alt="" class="w-[40px] h-[40px] mt-4">
 
             </div>

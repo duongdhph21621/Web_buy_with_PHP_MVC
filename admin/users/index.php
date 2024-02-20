@@ -47,6 +47,9 @@ if (exist_param("add_users")) {
     $mat_khau = $_POST["mat_khau"];
     $vai_tro = intval($_POST["vai_tro"]);
     $kich_hoat = intval($_POST["kich_hoat"]);
+    if (!$hinh) {
+        $hinh = $_POST["hinh_no_load"];
+    }
 
     users_update($ma_kh, $user_name, $mat_khau, $ho_ten, $email, $vai_tro, $kich_hoat, $hinh);
 

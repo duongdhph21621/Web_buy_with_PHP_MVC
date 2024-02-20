@@ -86,7 +86,7 @@
 
                         <!-- Profile dropdown -->
                         <div class="relative">
-                            <button type="button" class="-m-1.5 flex items-center p-1.5" id="user-menu-button"
+                            <button type="button" class="group -m-1.5 flex items-center p-1.5" id="user-menu-button"
                                 aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
                                 <img class="h-8 w-8 rounded-full bg-gray-50"
@@ -102,6 +102,17 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </span>
+                                <div class="hidden group-hover:block absolute right-0 top-[25px] z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white  shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                    tabindex="-1">
+                                    <!-- Active: "bg-gray-50", Not Active: "" -->
+                                    <a href="/site/profile"
+                                        class="block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-0">Your profile</a>
+                                    <a href="/site/tai_khoan?logout"
+                                        class="block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-1">Sign out</a>
+                                </div>
                             </button>
 
                             <!--
@@ -114,15 +125,7 @@
                 From: "transform opacity-100 scale-100"
                 To: "transform opacity-0 scale-95"
             -->
-                            <div class="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 focus:outline-none"
-                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
-                                tabindex="-1">
-                                <!-- Active: "bg-gray-50", Not Active: "" -->
-                                <a href="#" class="block px-3 py-1 text-sm leading-6 text-gray-900" role="menuitem"
-                                    tabindex="-1" id="user-menu-item-0">Your profile</a>
-                                <a href="/site/tai_khoan?logout" class="block px-3 py-1 text-sm leading-6 text-gray-900"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Sign out</a>
-                            </div>
+
                         </div>
                     </div>
                 </div>

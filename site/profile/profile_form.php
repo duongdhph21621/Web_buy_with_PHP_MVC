@@ -1,7 +1,9 @@
-<form action="index.php?edit_user_login" id="login_user" method="post">
+<form action="index.php?edit_user_login" id="login_user" method="post" enctype="multipart/form-data">
     <div class="w-full flex justify-center">
         <img src="../../upload/<?php echo $userLogin['hinh'] ?>" alt="" class="w-[50px] h-[50px]">
     </div>
+
+    <input type="text" name="ma_kh" id="ma_kh" hidden value="<?php echo $userLogin['ma_kh'] ?>">
     <div class="mb-4">
         <label for="user_name" class=" block mb-2 text-sm font-medium text-white">Tên người dùng:</label>
         <input type="text" name="user_name" id="user_name" placeholder="User name"
@@ -22,7 +24,7 @@
     </div>
     <div class="mb-4">
         <label for="image" class="block mb-2 text-sm font-medium text-white">Hình ảnh:</label>
-        <input type="file" name="image" id="image"
+        <input type="file" name="hinh" id="hinh" value="<?php echo $userLogin['hinh'] ?>"
             class="border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 text-white block w-full p-2 rounded-md">
     </div>
 
