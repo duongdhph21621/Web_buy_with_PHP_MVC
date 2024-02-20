@@ -36,4 +36,10 @@ function get_one_item($edit_id)
     $sql = "SELECT * From loai_hang WHERE ma_loai = $edit_id";
     return qdo_query_one($sql);
 }
+
+function get_one_item_by_name($name_loai_hang)
+{
+    $sql = "SELECT * From loai_hang WHERE ten_loai = $name_loai_hang";
+    return qdo_query_one($sql);
+}
 ?>

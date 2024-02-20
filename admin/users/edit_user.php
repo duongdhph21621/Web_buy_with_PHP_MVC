@@ -1,3 +1,51 @@
+<script>
+    $().ready(function () {
+        $("#edit_loai_hang").validate({
+            onfocusout: true,
+            onkeyup: true,
+            onclick: true,
+            rules: {
+                "user_name": {
+                    required: true,
+                },
+                "mat_khau": {
+                    required: true,
+                    minlength: 3
+                },
+                "email": {
+                    required: true,
+                    email: true
+                },
+                "ho_ten": {
+                    required: true,
+                    pattern: /^[A-Za-z\s]+$/,
+                }
+
+
+            },
+            messages: {
+                "user_name": {
+                    required: "Bắt buộc nhập",
+                },
+                "mat_khau": {
+                    required: "Bắt buộc nhập",
+                    minlength: "Nhập ít nhất 3 ký tự"
+                },
+                "email": {
+                    required: "Bắt buộc nhập",
+                    email: "Bắt buộc là email"
+                },
+                "ho_ten": {
+                    required: "Bắt buộc nhập",
+                    pattern: "Chỉ chứa chữ cái và khoảng trắng"
+                }
+
+            }
+        });
+    });
+
+</script>
+
 <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
         <h1 class="text-base font-semibold leading-6 text-gray-900">User</h1>
@@ -5,7 +53,8 @@
     </div>
 
 </div>
-<form class="mt-4 sm:mt-4 sm:flex-none" method="POST" enctype="multipart/form-data" action="index.php">
+<form class="mt-4 sm:mt-4 sm:flex-none" id="edit_loai_hang" method="POST" enctype="multipart/form-data"
+    action="index.php">
     <input type="hidden" class="hidden" value="<?php echo $data_edit["ma_kh"] ?>" name="ma_kh" id="ma_kh" />
 
     <div class="mt-10 border-t border-gray-200 pt-10">

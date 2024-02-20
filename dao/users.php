@@ -16,6 +16,20 @@ function users_insert($user_name, $mat_khau, $ho_ten, $email, $vai_tro, $kich_ho
 
 }
 
+function users_insert_edit_login($user_name, $ho_ten, $email, $hinh)
+{
+    $sql = "INSERT INTO users(user_name,ho_ten,email,hinh) VALUES (?,?,?,?)";
+    pdo_execute($sql, $user_name, $ho_ten, $email, $hinh);
+
+}
+
+function users_insert_edit_login_not_img($user_name, $ho_ten, $email)
+{
+    $sql = "INSERT INTO users(user_name,ho_ten,email) VALUES (?,?,?)";
+    pdo_execute($sql, $user_name, $ho_ten, $email);
+
+}
+
 function users_delete($ma_kh)
 {
 

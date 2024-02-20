@@ -1,3 +1,69 @@
+<script>
+    $().ready(function () {
+        $.validator.addMethod("beforeCurrentDate", function (value, element) {
+            var inputDate = new Date(value);
+            var currentDate = new Date();
+            return inputDate < currentDate;
+        }, "Vui lòng nhập ngày trước thời gian hiện tại.");
+
+        $("#addHH").validate({
+            onfocusout: true,
+            onkeyup: true,
+            onclick: true,
+            rules: {
+                "ten_hh": {
+                    required: true,
+                },
+                "don_gia": {
+                    required: true,
+                    pattern: /^[1-9][0-9]*$/,
+                },
+                "mo_ta": {
+                    required: true,
+                },
+                "giam_gia": {
+                    required: true,
+                    pattern: /^(0(\.\d+)?|1(\.0+)?)$/,
+                },
+                "hinh": {
+                    required: true,
+                },
+                "ngay_nhap": {
+                    required: true,
+                    beforeCurrentDate: true,
+                },
+
+
+            },
+            messages: {
+                "ten_hh": {
+                    required: "Bắt buộc nhập",
+                },
+                "don_gia": {
+                    required: "Bắt buộc nhập",
+                    pattern: "Vui lòng chỉ nhập số dương",
+                },
+                "mo_ta": {
+                    required: "Bắt buộc nhập",
+                },
+                "giam_gia": {
+                    required: "Bắt buộc nhập",
+                    pattern: "Vui lòng chỉ nhập số 0-1",
+
+                },
+                "hinh": {
+                    required: "Bắt buộc nhập",
+                },
+                "ngay_nhap": {
+                    required: "Bắt buộc nhập",
+                },
+            }
+        });
+    });
+
+</script>
+
+
 <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
         <h1 class="text-base font-semibold leading-6 text-gray-900">Hàng hóa</h1>
@@ -5,7 +71,7 @@
     </div>
 
 </div>
-<form class="mt-4 sm:mt-4 sm:flex-none" method="POST" enctype="multipart/form-data" action="index.php">
+<form class="mt-4 sm:mt-4 sm:flex-none" method="POST" id="addHH" enctype="multipart/form-data" action="index.php">
 
 
     <div class="mt-10 border-t border-gray-200 pt-10">

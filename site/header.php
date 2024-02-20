@@ -57,7 +57,7 @@ $userLogin = unserialize($userCookie);
                                 role='menu' aria-orientation='vertical' aria-labelledby='user-menu-button'
                                 tabindex='-1'>
                                 <!-- Active: 'bg-gray-50', Not Active: ' -->
-                                <a href='#' class='block px-3 py-1 text-sm leading-6 text-gray-900' role='menuitem'
+                                <a href='/site/profile' class='block px-3 py-1 text-sm leading-6 text-gray-900' role='menuitem'
                                     tabindex='-1' id='user-menu-item-0'>Your profile</a>
                                 <a href='/site/tai_khoan?logout' class='block px-3 py-1 text-sm leading-6 text-gray-900' role='menuitem'
                                     tabindex='-1' id='user-menu-item-1'>Sign out</a>

@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"
+        type="text/javascript"></script>
+    <script src="demoValidation.js" type="text/javascript"></script>
 </head>
+<style>
+    label.error {
+        color: red;
+    }
+
+    .disabled {
+        pointer-events: none;
+        color: gray;
+        text-decoration: none;
+        cursor: not-allowed;
+    }
+</style>
 
 <body>
     <?php

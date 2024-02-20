@@ -1,3 +1,53 @@
+<script>
+    $().ready(function () {
+        $("#add_loai_hang").validate({
+            onfocusout: true,
+            onkeyup: true,
+            onclick: true,
+            rules: {
+                "user_name": {
+                    required: true,
+                },
+                "mat_khau": {
+                    required: true,
+                    minlength: 3
+                },
+                "email": {
+                    required: true,
+                    email: true
+                },
+                "ho_ten": {
+                    required: true,
+                    pattern: /^[A-Za-z\s]+$/,
+                }
+
+
+            },
+            messages: {
+                "user_name": {
+                    required: "Bắt buộc nhập",
+                },
+                "mat_khau": {
+                    required: "Bắt buộc nhập",
+                    minlength: "Nhập ít nhất 3 ký tự"
+                },
+                "email": {
+                    required: "Bắt buộc nhập",
+                    email: "Bắt buộc là email"
+                },
+                "ho_ten": {
+                    required: "Bắt buộc nhập",
+                    pattern: "Chỉ chứa chữ cái và khoảng trắng"
+                }
+
+            }
+        });
+    });
+
+</script>
+
+
+
 <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
         <h1 class="text-base font-semibold leading-6 text-gray-900">User</h1>
@@ -17,9 +67,7 @@
                 <div class="mt-1">
                     <input type="text" id="user_name" name="user_name" autocomplete="given-name"
                         class="block w-full rounded-md border-gray-300 shadow-sm focus-visible:outline-none border-2 px-1 py-2 sm:text-sm">
-                    <span class="block bg-red-100 border border-red-400 text-red-700 mt-3 w-fit">
-                        <?php echo $errors && $errors["user_name"] ? $errors["user_name"] : "" ?>
-                    </span>
+
                 </div>
             </div>
 
@@ -29,9 +77,7 @@
                 <div class="mt-1">
                     <input type="password" id="mat_khau" name="mat_khau" autocomplete="family-name"
                         class="block w-full rounded-md border-gray-300 shadow-sm focus-visible:outline-none border-2 px-1 py-2 sm:text-sm">
-                    <span class="block bg-red-100 border border-red-400 text-red-700 mt-3 w-fit">
-                        <?php echo $errors && $errors["mat_khau"] ? $errors["user_name"] : "" ?>
-                    </span>
+
                 </div>
             </div>
 
@@ -41,18 +87,14 @@
                 <div class="mt-1">
                     <input type="text" name="ho_ten" id="ho_ten"
                         class="block w-full rounded-md border-gray-300 shadow-sm focus-visible:outline-none border-2 px-1 py-2 sm:text-sm">
-                    <span class="block bg-red-100 border border-red-400 text-red-700 mt-3 w-fit">
-                        <?php echo $errors && $errors["ho_ten"] ? $errors["user_name"] : "" ?>
-                    </span>
+
                 </div>
             </div>
             <div class="mt-4">
-                <label class="block text-sm font-medium text-gray-700">Chọn tệp:</label>
+                <label class="block text-sm font-medium text-gray-700">Chọn tệp hình:</label>
 
                 <input id="image" name="image" type="file" class="">
-                <span class="block bg-red-100 border border-red-400 text-red-700 mt-3 w-fit">
-                    <?php echo $errors && $errors["hinh"] ? $errors["user_name"] : "" ?>
-                </span>
+
             </div>
 
             <div class="sm:col-span-2">
@@ -60,9 +102,7 @@
                 <div class="mt-1">
                     <input type="text" name="email" id="email"
                         class="block w-full rounded-md border-gray-300 shadow-sm focus-visible:outline-none border-2 px-1 py-2 sm:text-sm">
-                    <span class="block bg-red-100 border border-red-400 text-red-700 mt-3 w-fit">
-                        <?php echo $errors && $errors["email"] && $errors["email"] ? $errors["user_name"] : "" ?>
-                    </span>
+
                 </div>
             </div>
 
