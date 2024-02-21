@@ -1,6 +1,7 @@
 <?php
 require_once("../../dao/hang_hoa.php");
 require_once("../../dao/loai_hang.php");
+require_once("../../dao/binh_luan.php");
 require_once("../../dao/pdo.php");
 require("../../global.php");
 // extract($_REQUEST);
@@ -69,7 +70,7 @@ if (exist_param("add_loai_hang")) {
 } elseif (exist_param("btn_delete")) {
     $delete_id = $_GET["ma_hh"];
     hang_hoa_delete($delete_id);
-
+    binh_luan_delete_by_ma_hh($delete_id);
     $ds_hang_hoa = hang_hoa_select_all();
     $ds_loai_hang = loai_selectall();
 

@@ -72,4 +72,10 @@ function update_password($user_name, $email, $password)
     $sql = "UPDATE users SET mat_khau = ? WHERE user_name =? AND email =?";
     return pdo_execute($sql, $password, $user_name, $email);
 }
+
+function edit_pass($ma_kh, $new_mat_khau)
+{
+    $sql = "UPDATE users SET mat_khau = ? WHERE ma_kh =?";
+    return pdo_execute($sql, $new_mat_khau, $ma_kh);
+}
 ?>

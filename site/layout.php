@@ -21,6 +21,15 @@
         color: red;
     }
 
+    .example_text {
+        white-space: nowrap;
+        /* Ngăn văn bản xuống dòng */
+        overflow: hidden;
+        /* Ẩn phần văn bản vượt qua khung */
+        text-overflow: ellipsis;
+        /* Hiển thị dấu ba chấm */
+    }
+
     .disabled {
         pointer-events: none;
         color: gray;
@@ -30,14 +39,7 @@
 </style>
 
 <body>
-    <?php
-    $userCookie = $_COOKIE['user'];
 
-    $userLogin = unserialize($userCookie);
-    if (!$userLogin) {
-        header("Location: /site/tai_khoan?login");
-    }
-    ?>
     <?php
     require("header.php");
     ?>

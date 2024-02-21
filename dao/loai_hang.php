@@ -39,7 +39,7 @@ function get_one_item($edit_id)
 
 function get_one_item_by_name($name_loai_hang)
 {
-    $sql = "SELECT * From loai_hang WHERE ten_loai = $name_loai_hang";
-    return qdo_query_one($sql);
+    $sql = "SELECT COUNT(*) FROM loai_hang WHERE ten_loai = ?";
+    return qdo_query_one($sql, $name_loai_hang);
 }
 ?>

@@ -8,13 +8,7 @@ $ds_hang_hoa_top_10 = hang_hoa_select_top10();
 
 $ds_loai_hang = loai_selectall();
 
-$userCookie = $_COOKIE['user'];
 
-// Chuyển đổi chuỗi đã serialize thành mảng
-$userLogin = unserialize($userCookie);
-if (!$userLogin ) {
-    header("Location: /site/tai_khoan?login");
-}
 
 if (exist_param("gioi_thieu")) {
     // $ds_loai_hang = loai_selectall();

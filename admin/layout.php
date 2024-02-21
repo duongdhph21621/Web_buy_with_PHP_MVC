@@ -109,6 +109,9 @@
                                     <a href="/site/profile"
                                         class="block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md"
                                         role="menuitem" tabindex="-1" id="user-menu-item-0">Your profile</a>
+                                    <a href='/site/tai_khoan?doi_pass'
+                                        class='block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md'
+                                        role='menuitem' tabindex='-1' id='user-menu-item-0'>Đổi mật khẩu</a>
                                     <a href="/site/tai_khoan?logout"
                                         class="block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md"
                                         role="menuitem" tabindex="-1" id="user-menu-item-1">Sign out</a>

@@ -35,7 +35,7 @@
             <div class="mt-2 flex gap-2">
                 <div
                     class="p-1 font-Inter font-normal text-white rounded-md  text-[16px] bg-[red] border-[1px] text-[#344054] border-[#ECF1F6] py-1  px-[20px] w-fit cursor-pointer">
-                    <?php echo $item_hh["giam_gia"] ?>%
+                    <?php echo $item_hh["giam_gia"] * 100 ?>%
                 </div>
             </div>
         </div>

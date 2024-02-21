@@ -1,8 +1,12 @@
 <?php
-$userCookie = $_COOKIE['user'];
+$userLogin = null;
+if (isset($_COOKIE['user'])) {
+    $userCookie = $_COOKIE['user'];
+
+    $userLogin = unserialize($userCookie);
+}
 
 // Chuyển đổi chuỗi đã serialize thành mảng
-$userLogin = unserialize($userCookie);
 
 ?>
 
@@ -10,9 +14,9 @@ $userLogin = unserialize($userCookie);
     <nav class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none">
             <div class="flex items-center">
-                <a href="#">
+                <a href="/">
                     <span class="sr-only">Your Company</span>
-                    <img class="h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="">
+                    <img class="h-10 w-auto" src="/content/images/snapedit_1708497426586.png" alt="">
                 </a>
                 <div class="ml-10 hidden space-x-8 lg:block">
                     <a href="/" class="text-base font-medium text-white hover:text-indigo-50">Trang chủ</a>
@@ -57,6 +61,8 @@ $userLogin = unserialize($userCookie);
                                 <!-- Active: 'bg-gray-50', Not Active: ' -->
                                 <a href='/site/profile' class='block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md' role='menuitem'
                                     tabindex='-1' id='user-menu-item-0'>Your profile</a>
+                                    <a href='/site/tai_khoan?doi_pass' class='block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md' role='menuitem'
+                                    tabindex='-1' id='user-menu-item-0'>Đổi mật khẩu</a>
                                 <a href='/site/tai_khoan?logout' class='block px-3 py-2 text-sm leading-6 text-gray-900 hover:bg-gray-200 rounded-md' role='menuitem'
                                     tabindex='-1' id='user-menu-item-1'>Sign out</a>
                             </div>

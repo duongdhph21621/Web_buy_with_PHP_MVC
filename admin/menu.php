@@ -23,8 +23,7 @@ $currentURL = $_SERVER['PHP_SELF'];
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
                 <a class="flex h-16 shrink-0 items-center " href="/site/trang_chu">
-                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white"
-                        alt="Your Company">
+                    <img class="h-8 w-auto" src="/content/images/snapedit_1708497426586.png" alt="Your Company">
                 </a>
                 <nav class="flex flex-1 flex-col">
                     <ul role="list" class="flex flex-1 flex-col gap-y-7">
@@ -96,7 +95,7 @@ $currentURL = $_SERVER['PHP_SELF'];
     <!-- Sidebar component, swap this element with another sidebar if you like -->
     <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-indigo-600 px-6 pb-4">
         <a class="flex h-16 shrink-0 items-center" href="/site/trang_chu">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=white" alt="Your Company">
+            <img class="h-8 w-auto" src="/content/images/snapedit_1708497426586.png" alt="Your Company">
         </a>
         <nav class="flex flex-1 flex-col">
             <ul role="list" class="flex flex-1 flex-col gap-y-7">

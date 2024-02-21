@@ -1,11 +1,14 @@
 <?php
 require("../../dao/binh_luan.php");
 require("../../dao/users.php");
+$userLogin = null;
+if (isset($_COOKIE['user'])) {
+    $userCookie = $_COOKIE['user'];
+    $userLogin = unserialize($userCookie);
 
-$userCookie = $_COOKIE['user'];
+}
 
 // Chuyển đổi chuỗi đã serialize thành mảng
-$userLogin = unserialize($userCookie);
 
 if (exist_param("comment")) {
     $noi_dung = $_POST["comment"];

@@ -1,3 +1,15 @@
+<style>
+    .example_text {
+
+        white-space: nowrap;
+        /* Ngăn văn bản xuống dòng */
+        overflow: hidden;
+        /* Ẩn phần văn bản vượt qua khung */
+        text-overflow: ellipsis;
+        /* Hiển thị dấu ba chấm */
+
+    }
+</style>
 <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
         <h1 class="text-base font-semibold leading-6 text-gray-900">Hàng Hóa</h1>
@@ -64,7 +76,7 @@
                             echo "<td class='whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6'>" . $value["ten_hh"] . "</td>";
                             echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>" . $value["don_gia"] . "</td>";
                             echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>" . $value["giam_gia"] . "</td>";
-                            echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>" . $value["mo_ta"] . "</td>";
+                            echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500 w-[250px]'><p class='example_text'>" . $value["mo_ta"] . "</p></td>";
                             echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>" . $value["ngay_nhap"] . "</td>";
                             echo "<td class='whitespace-nowrap px-3 py-4 text-sm text-gray-500'>" . $value["luot_xem"] . "</td>";
                             foreach ($ds_loai_hang as $key => $value1) {

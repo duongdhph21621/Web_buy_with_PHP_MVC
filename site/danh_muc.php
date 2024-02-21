@@ -1,3 +1,14 @@
+<style>
+    .example_text {
+        white-space: nowrap;
+        /* Ngăn văn bản xuống dòng */
+        overflow: hidden;
+        /* Ẩn phần văn bản vượt qua khung */
+        text-overflow: ellipsis;
+        /* Hiển thị dấu ba chấm */
+    }
+</style>
+
 <div class="mt-4 border-t border-gray-200">
     <form action="/site/hang_hoa/liet_ke.php" class="border-b pb-4 border-gray-200">
         <span class="mb-4 block">Search</span>
@@ -26,7 +37,7 @@
                 echo "<li class='border-b-2 border-gray block'>";
                 echo "<a class='flex items-center py-2' href='../hang_hoa/chi_tiet.php?ma_hh=" . $value["ma_hh"] . "' class='block px-2 py-3'>
                     <img class='w-[20px] h-[20px]' src='/upload/" . $value["hinh"] . "' />
-                    <p class='ml-3'>" . $value["ten_hh"] . "</p>
+                    <p class='ml-3 example_text'>" . $value["ten_hh"] . "</p>
                 </a>";
                 echo "</li>";
             }

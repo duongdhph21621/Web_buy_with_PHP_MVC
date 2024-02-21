@@ -24,6 +24,13 @@ function hang_hoa_delete($ma_hh)
 }
 
 
+function hang_hoa_delete_by_loai($ma_loai)
+{
+
+    $sql = "DELETE FROM hang_hoa WHERE ma_loai= $ma_loai";
+    pdo_execute($sql);
+}
+
 function hang_hoa_update($ten_hh, $don_gia, $giam_gia, $hinh, $ngay_nhap, $mo_ta, $dac_biet, $luot_xem, $ma_loai, $ma_hh)
 {
     $sql = "UPDATE hang_hoa SET ten_hh = ?, don_gia = ?, giam_gia =?, hinh =?, ngay_nhap =?, mo_ta =?, dac_biet =?,luot_xem =?,ma_loai = ? WHERE ma_hh = ?";
@@ -46,6 +53,12 @@ function hang_hoa_select_top10()
 function hang_hoa_select_dac_biet()
 {
     $sql = "SELECT * FROM hang_hoa where dac_biet = 1";
+    return qdo_query($sql);
+}
+
+function hang_hoa_select_by_loai_all($loai_hang)
+{
+    $sql = "SELECT ma_hh FROM hang_hoa where ma_loai = $loai_hang";
     return qdo_query($sql);
 }
 

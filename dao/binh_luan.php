@@ -34,6 +34,26 @@ function binh_luan_delete($ma_bl)
     }
 }
 
+function binh_luan_delete_by_ma_hh($ma_hh)
+{
+
+    if (is_array($ma_hh)) {
+        $ma_hh_values = array_column($ma_hh, 'ma_hh');
+
+        // $placeholders = rtrim(str_repeat('?,', count($ma_hh)), ',');
+        // $sql = "DELETE FROM binh_luan WHERE ma_hh IN ($placeholders)";
+        foreach ($ma_hh_values as $hh) {
+            $sql = "DELETE FROM binh_luan WHERE ma_hh = $hh";
+            pdo_execute($sql);
+        }
+    } else {
+        $sql = "DELETE FROM binh_luan WHERE ma_hh = $ma_hh";
+
+        pdo_execute($sql);
+
+    }
+}
+
 
 function binh_luan_update($ma_bl, $noi_dung, $ma_hh, $ngay_bl, $ma_kh)
 {

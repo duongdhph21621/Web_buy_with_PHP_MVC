@@ -5,6 +5,8 @@ require_once("../../dao/pdo.php");
 require("../../global.php");
 // extract($_REQUEST);
 
+
+
 if (exist_param("login")) {
     if (isset($_COOKIE['user'])) {
         $userCookie = $_COOKIE['user'];
@@ -80,6 +82,22 @@ if (exist_param("login")) {
         $MESSAGE = "Sai username hoặc email";
         $VIEW_NAME = "quen_pass_form.php";
     }
+
+} else if (exist_param("edit_pass")) {
+    $userCookie = $_COOKIE['user'];
+    $userLogin = unserialize($userCookie);
+
+    $password = $_POST["password"];
+    $new_password = $_POST["new_password"];
+
+    edit_pass($userLogin["ma_kh"], $new_password);
+    header("Location: /site/tai_khoan?login");
+
+
+
+
+} else if (exist_param("doi_pass")) {
+    $VIEW_NAME = "doi_pass.php";
 
 }
 

@@ -58,9 +58,7 @@
     </div>
 
 
-
-
-
     <input type="submit" class="register" value="Đổi mật khẩu">
+    <a href="index.php?login" class="ml-[96px] text-blue-500">Đăng nhập</a>
 
 </form>
