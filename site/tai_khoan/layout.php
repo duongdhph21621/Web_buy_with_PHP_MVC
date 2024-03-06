@@ -47,9 +47,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <h1 class="w3ls">Official Signin Form</h1>
     <div class="content-w3ls">
-        <div class="content-agile1">
+        <a href="/site/trang_chu/index.php" class="block content-agile1">
             <h2 class="agileits1">Xshop</h2>
-        </div>
+        </a>
         <div class="content-agile2">
             <?php
             include $VIEW_NAME;

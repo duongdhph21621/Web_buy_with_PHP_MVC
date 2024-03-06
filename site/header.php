@@ -76,7 +76,7 @@ if (isset($_COOKIE['user'])) {
                     echo "<a href='/site/tai_khoan/index.php?login'
                         class='inline-block rounded-md border border-transparent bg-indigo-500 px-4 py-2 text-base font-medium text-white hover:bg-opacity-75'>Sign
                         in</a>
-                    <a href='#'
+                    <a href='/site/tai_khoan/index.php?signup'
                         class='inline-block rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:bg-indigo-50'>Sign
                         up</a>";
                 }
